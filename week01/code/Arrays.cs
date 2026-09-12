@@ -8,12 +8,24 @@ public static class Arrays
     /// <returns>array of doubles that are the multiples of the supplied number</returns>
     public static double[] MultiplesOf(double number, int length)
     {
-        // TODO Problem 1 Start
+        // Step 1: Create an array with the requested length.
+        // Step 2: Loop through every position in the array.
+        // Step 3: Multiply the supplied number by the current
+        // multiple, starting at 1.
+        // Step 4: Store each calculated multiple in the array.
+        // Step 5: Return the completed array.
+
+        double[] multiples = new double[length];
+
+        for (int i = 0; i < length; i++)
+        {
+            multiples[i] = number * (i + 1);
+        }
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        return multiples; // replace this return statement with your own
     }
 
     /// <summary>
@@ -25,7 +37,19 @@ public static class Arrays
     /// </summary>
     public static void RotateListRight(List<int> data, int amount)
     {
-        // TODO Problem 2 Start
+        // Step 1: Find the index where the final group of values begins.
+        // Step 2: Copy the final 'amount' values into a temporary list.
+        // Step 3: Remove those values from their original positions.
+        // Step 4: Insert the copied values at the beginning of the list.
+
+        int startIndex = data.Count - amount;
+
+        List<int> valuesToMove = data.GetRange(startIndex, amount);
+
+        data.RemoveRange(startIndex, amount);
+
+        data.InsertRange(0, valuesToMove);
+        
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
